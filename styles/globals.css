@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --white: #ffffff;
+  --off-white: #f8f8f6;
+  --silver: #e8e8e8;
+  --silver2: #d4d4d4;
+  --border: #e0e0e0;
+  --black: #0a0a0a;
+  --charcoal: #1a1a1a;
+  --muted: #888;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-serif: 'Instrument Serif', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: var(--font-body); }
+img { max-width: 100%; display: block; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.fade-up { animation: fadeUp 0.7s ease both; }
+.fade-up-1 { animation: fadeUp 0.7s 0.1s ease both; }
+.fade-up-2 { animation: fadeUp 0.7s 0.2s ease both; }
+.fade-up-3 { animation: fadeUp 0.7s 0.35s ease both; }
+.fade-up-4 { animation: fadeUp 0.7s 0.5s ease both; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--off-white); }
+::-webkit-scrollbar-thumb { background: var(--silver2); border-radius: 2px; }
+
+/* ── Mobile fixes ── */
+@media (max-width: 640px) {
+  /* Prevent horizontal overflow */
+  body { overflow-x: hidden; }
+
+  /* Section padding reduced on mobile */
+  section { padding: 64px 16px !important; }
+
+  /* Hero button stack on mobile */
+  .hero-btns { flex-direction: column !important; align-items: stretch !important; }
+  .hero-btns a, .hero-btns button {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Trust badges wrap tightly */
+  .trust-badges { gap: 12px !important; }
+
+  /* Form inputs full width on mobile */
+  input, textarea, select {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+    width: 100% !important;
+  }
+
+  /* Card grids single column */
+  .card-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Navbar padding */
+  nav { padding: 0 16px !important; }
+
+  /* Footer padding */
+  footer { padding: 40px 16px !important; }
+
+  /* Form wrap padding */
+  .form-wrap { padding: 28px 20px !important; }
+
+  /* Order form padding */
+  .order-form { padding: 28px 20px !important; }
+}
+
+@media (max-width: 400px) {
+  section { padding: 48px 14px !important; }
+}
